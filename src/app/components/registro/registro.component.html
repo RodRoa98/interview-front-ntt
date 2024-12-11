@@ -1,0 +1,50 @@
+<div class="registro-container">
+    <mat-card>
+        <h2 class="text-center">Formulario de Registro</h2>
+        <form [formGroup]="registroForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Nombre Completo</mat-label>
+                <input matInput formControlName="name" placeholder="Escribe tu nombre completo">
+                <mat-error *ngIf="f['name']?.touched && f['name']?.errors?.['required']">
+                    Este campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput formControlName="email" placeholder="Escribe tu correo electrónico">
+                <mat-error *ngIf="f['email']?.touched && f['email']?.errors?.['required']">
+                    Este campo es obligatorio.
+                </mat-error>
+                <mat-error *ngIf="f['email']?.touched && f['email']?.errors?.['email']">
+                    El formato del correo no es válido.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" formControlName="password" placeholder="Escribe tu contraseña"
+                    autocomplete="new-password">
+                <mat-error *ngIf="f['password']?.touched && f['password']?.errors?.['required']">
+                    Este campo es obligatorio.
+                </mat-error>
+                <mat-error *ngIf="f['password']?.touched && f['password']?.errors?.['pattern']">
+                    Debe tener al menos 8 caracteres, una mayúscula y un número.
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Teléfono</mat-label>
+                <input matInput type="tel" formControlName="phone" placeholder="Escribe tu número de teléfono">
+                <mat-error *ngIf="f['phone']?.touched && f['phone']?.errors?.['pattern']">
+                    El formato del teléfono no es válido.
+                </mat-error>
+            </mat-form-field>
+
+            <span class="text_normal">¿Ya tienes cuenta? Ingresa al sistema <a (click)="irALogin()">aquí</a></span><br>
+
+            <button mat-raised-button color="primary" [disabled]="registroForm.invalid">Registrar</button>
+        </form>
+    </mat-card>
+</div>

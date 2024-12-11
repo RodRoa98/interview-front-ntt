@@ -1,0 +1,42 @@
+.listado-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+mat-card {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+mat-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mat-header-cell {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.mat-row {
+    cursor: pointer;
+}
+
+.mat-elevation-z8 {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2.text-center {
+    text-align: center;
+    color: white;
+}
+
+button {
+    width: 150px;
+    display: flex;
+    align-self: flex-end;
+}
