@@ -9,4 +9,5 @@ export const routes: Routes = [
     { path: 'registro', component: RegistroComponent },
     { path: 'listado', component: ListadoComponent, canActivate: [authGuard] },
     { path: '', redirectTo: '/registro', pathMatch: 'full' },
+    { path: '**', redirectTo: '/registro', pathMatch: 'full' },
 ];

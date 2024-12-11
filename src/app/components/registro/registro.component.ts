@@ -5,6 +5,7 @@ import { AngularMaterialModule } from '../../modules/angular-material.module';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { noBlankSpacesValidator } from '../../validators/no-blank-spaces.validator';
 
 @Component({
   selector: 'app-registro',
@@ -23,7 +24,7 @@ export class RegistroComponent {
     private _router: Router
   ) {
     this.registroForm = this._formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required, noBlankSpacesValidator()],
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',

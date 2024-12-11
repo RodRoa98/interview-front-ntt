@@ -9,6 +9,9 @@
                 <mat-error *ngIf="f['name']?.touched && f['name']?.errors?.['required']">
                     Este campo es obligatorio.
                 </mat-error>
+                <mat-error *ngIf="f['name']?.touched && f['name']?.errors?.['noBlankSpaces']">
+                    Este campo no puede contener solo espacios en blanco.
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="full-width">
